@@ -30,7 +30,7 @@
               </q-item-section>
               <q-item-section>
                 <q-item-label class="cart-item-label">{{item.name}}</q-item-label>
-                <q-item-label class="cart-item-price">{{item.price}}</q-item-label>
+                <q-item-label class="cart-item-price">{{toCurrency('BRL',item.price)}}</q-item-label>
                 <q-item-label></q-item-label>
               </q-item-section>
             </q-item>
@@ -42,7 +42,7 @@
               </q-item-section>
               <q-space />
               <q-item-section side class="cart-item-price-shipping">
-                {{subTotal}}
+                {{toCurrency('BRL',subTotal)}}
               </q-item-section>
             </q-item>
 
@@ -53,7 +53,7 @@
               </q-item-section>
               <q-space />
               <q-item-section side class="cart-item-price-shipping">
-                {{shipping}}
+                {{toCurrency('BRL',shipping)}}
               </q-item-section>
             </q-item>
 
@@ -64,7 +64,7 @@
               </q-item-section>
               <q-space />
               <q-item-section side class="cart-item-price-shipping big">
-                {{total}}
+                {{toCurrency('BRL',total)}}
               </q-item-section>
             </q-item>
           </q-list>

@@ -9,7 +9,7 @@
       <template v-if="!hovering">
         <div key="not-hovering">
           <div class="item-caption">{{item.name}}</div>
-          <div class="item-caption-strong">{{item.price}}</div>
+          <div class="item-caption-strong">{{toCurrency('BRL',item.price)}}</div>
         </div>
       </template>
       <div v-else key="hovering" class="item-caption-strong">adicionar ao carrinho</div>
