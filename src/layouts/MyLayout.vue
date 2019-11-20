@@ -11,10 +11,10 @@
 
         <div class="cart-menu-title">
           Carrinho
-          <span class="cart-menu-subtitle">{{(cart.length > 0) ? `(${cart.length} ${cart.length == 1 ? 'item' : 'itens'})` : ''}}</span>
+          <span class="cart-menu-subtitle">{{(cartItemsAmount > 0) ? `(${cartItemsAmount} ${cartItemsAmount == 1 ? 'item' : 'itens'})` : ''}}</span>
         </div>
 
-        <div v-if="cart.length === 0" class="text-center">
+        <div v-if="cartItemsAmount === 0" class="text-center">
           <img class="cart-image" src="../assets/cart-icon.svg">
           <div class="cart-empty-text">Até o momento,<br/> o seu carrinho está vazio</div>
         </div>
@@ -31,6 +31,7 @@
               <q-item-section>
                 <q-item-label class="cart-item-label">{{item.name}}</q-item-label>
                 <q-item-label class="cart-item-price">{{toCurrency('BRL',item.price)}}</q-item-label>
+                <q-item-label class="cart-item-label">Qtd: {{item.amount}}</q-item-label>
                 <q-item-label></q-item-label>
               </q-item-section>
             </q-item>
@@ -99,7 +100,7 @@ export default {
 
     ...mapState("gamesModule", ["cart"]),
 
-    ...mapGetters("gamesModule", ["subTotal","shipping","total"]),
+    ...mapGetters("gamesModule", ["subTotal","shipping","total","cartItemsAmount"]),
 
   },
 
