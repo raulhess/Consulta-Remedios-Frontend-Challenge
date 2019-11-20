@@ -20,7 +20,7 @@
         </div>
         <div v-else>
           <q-list>
-            <q-item v-for="item in cart" :key="item.id" class="q-px-none cart-item" clickable @click="$store.dispatch('gamesModule/removeItemCart',{id:item.id})">
+            <q-item v-ripple v-for="item in cart" :key="item.id" class="q-px-none cart-item" clickable @click="$store.dispatch('gamesModule/removeItemCart',{id:item.id})">
               <q-item-section side>
                 <div style="width: 60px;border-radius: 3px; background: #EEEEEE; text-align: center; padding: 6px 0px;">
                   <q-avatar rounded>

@@ -1,5 +1,5 @@
 <template>
-  <div class="store-item" @mouseover="hovering = true" @mouseleave="hovering = false" @click="$store.dispatch('gamesModule/addItemCart',{item:item})">
+  <div v-ripple class="store-item" @mouseover="hovering = true" @mouseleave="hovering = false" @click="$store.dispatch('gamesModule/addItemCart',{item:item})">
     <div class="image-container">
       <img :src="require(`assets/${item.image}`)" style="width: 180px;height: 180px;" />
     </div>
