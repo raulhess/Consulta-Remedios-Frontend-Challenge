@@ -14,10 +14,13 @@
           <span class="cart-menu-subtitle">{{(cartItemsAmount > 0) ? `(${cartItemsAmount} ${cartItemsAmount == 1 ? 'item' : 'itens'})` : ''}}</span>
         </div>
 
+        <!-- MOSTRA CASO O CARRINHO ESTEJA VAZIO -->
         <div v-if="cartItemsAmount === 0" class="text-center">
           <img class="cart-image" src="../assets/cart-icon.svg">
           <div class="cart-empty-text">Até o momento,<br/> o seu carrinho está vazio</div>
         </div>
+
+        <!-- LISTA QUE CONTÉM TODOS OS PRODUTOS DO CARRINHO -->
         <div v-else>
           <q-list>
             <q-item v-ripple v-for="item in cart" :key="item.id" class="q-px-none cart-item" clickable @click="$store.dispatch('gamesModule/removeItemCart',{id:item.id})">
@@ -37,6 +40,8 @@
             </q-item>
           </q-list>
           <q-list>
+
+            <!-- ITEM QUE MOSTRA O SUBTOTAL -->
             <q-item>
               <q-item-section side class="cart-item-label">
                 subtotal
@@ -47,7 +52,7 @@
               </q-item-section>
             </q-item>
 
-            
+            <!-- ITEM QUE MOSTRA O FRETE -->
             <q-item>
               <q-item-section side class="cart-item-label">
                 frete
@@ -58,7 +63,7 @@
               </q-item-section>
             </q-item>
 
-            
+            <!-- ITEM QUE MOSTRA O TOTAL DO CARRINHO -->
             <q-item>
               <q-item-section side class="cart-item-label">
                 total

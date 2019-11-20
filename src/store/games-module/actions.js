@@ -11,7 +11,6 @@ export function addItemCart({commit}, payload) {
 }
 
 export function removeItemCart({commit}, payload) {
-    console.log(payload)
     if(payload && payload.id){
         commit('REMOVE_ITEM_CART', payload)
     }
